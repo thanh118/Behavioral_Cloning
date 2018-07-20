@@ -15,10 +15,6 @@ As image processing is involved, the model is using convolutional layers for aut
 - drive.py The script to drive the car. You can feel free to resubmit the original drive.py or make modifications and submit your modified version.
 - utils.py The script to provide useful functionalities (i.e. image preprocessing and augumentation)
 - model.h5 The model weights.
-- environments.yml conda environment (Use TensorFlow without GPU)
-- environments-gpu.yml conda environment (Use TensorFlow with GPU)
-
-Note: drive.py is originally from [the Udacity Behavioral Cloning project GitHub](https://github.com/udacity/CarND-Behavioral-Cloning-P3) but it has been modified to control the throttle.
 
 ## Quick Start
 
@@ -47,7 +43,6 @@ Start up [the Udacity self-driving simulator](https://github.com/udacity/self-dr
 '''python
 python drive.py model.h5
 '''
-
 
 ### Run the pretrained model
 
@@ -92,27 +87,6 @@ In the end, the model looks like as follows:
 - Fully connected: neurons:  50, activation: ELU
 - Fully connected: neurons:  10, activation: ELU
 - Fully connected: neurons:   1 (output)
-
-As per the NVIDIA model, the convolution layers are meant to handle feature engineering and the fully connected layer for predicting the steering angle.  However, as stated in the NVIDIA document, it is not clear where to draw such a clear distinction.  Overall, the model is very functional to clone the given steering behavior.  
-
-The below is an model structure output from the Keras which gives more details on the shapes and the number of parameters.
-
-| Layer (type)                   |Output Shape      |Params  |Connected to     |
-|--------------------------------|------------------|-------:|-----------------|
-|lambda_1 (Lambda)               |(None, 66, 200, 3)|0       |lambda_input_1   |
-|convolution2d_1 (Convolution2D) |(None, 31, 98, 24)|1824    |lambda_1         |
-|convolution2d_2 (Convolution2D) |(None, 14, 47, 36)|21636   |convolution2d_1  |
-|convolution2d_3 (Convolution2D) |(None, 5, 22, 48) |43248   |convolution2d_2  |
-|convolution2d_4 (Convolution2D) |(None, 3, 20, 64) |27712   |convolution2d_3  |
-|convolution2d_5 (Convolution2D) |(None, 1, 18, 64) |36928   |convolution2d_4  |
-|dropout_1 (Dropout)             |(None, 1, 18, 64) |0       |convolution2d_5  |
-|flatten_1 (Flatten)             |(None, 1152)      |0       |dropout_1        |
-|dense_1 (Dense)                 |(None, 100)       |115300  |flatten_1        |
-|dense_2 (Dense)                 |(None, 50)        |5050    |dense_1          |
-|dense_3 (Dense)                 |(None, 10)        |510     |dense_2          |
-|dense_4 (Dense)                 |(None, 1)         |11      |dense_3          |
-|                                |**Total params**  |252219  |                 |
-
 
 ## Data Preprocessing
 
@@ -170,15 +144,6 @@ As for training,
 ### The Lake Side Track
 
 As there can be unlimited number of images augmented, I set the samples per epoch to 20,000.  I tried from 1 to 200 epochs but I found 5-10 epochs is good enough to produce a well trained model for the lake side track.  The batch size of 40 was chosen as that is the maximum size which does not cause out of memory error on my Mac with NVIDIA GeForce GT 650M 1024 MB.
-
-### The Jungle Track
-
-This tracker was later released in the new simulator by Udacity and replaced the old mountain track.  It's much more difficuilt than the lake side track and the old mountain track.
-
-I used the simulator to generate training data by doing 3 to 4 rounds.  Also, added several recovery scenarios to handle tricky curves and slopes.
-
-I felt that the validation loss is not a great indication of how well it drives.  So, I tried the last several models to see which one drives the best.  For this, I set the save_best_only to False (use `-o false` for model.py), and I used 50 epcohs (Use `-n 50`).
-=======
 
 ### Dependencies
 This lab requires:
