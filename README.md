@@ -38,11 +38,6 @@ As image processing is involved, the model using convolution layers to automated
 * model.h5: The model weight
 Creating a Great Writeup
 ---
-## Run the pretrain model
-Start up [the Udacity self-driving simulator](https://github.com/udacity/self-driving-car-sim), choose a scene and press the Autonomous Mode button.  Then, run the model as follows:
-'''python
-python drive.py model.h5
-'''
 
 ### Run the pretrained model
 
@@ -189,16 +184,19 @@ The fourth argument, `run1`, is the directory in which to save the images seen b
 ```sh
 ls run1
 
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_424.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_451.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_477.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_528.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_573.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_618.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_697.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_723.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_749.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_817.jpg
+2018_07_19_20_34_35_114.jpg  2018_07_19_20_36_17_723.jpg
+2018_07_19_20_34_35_132.jpg  2018_07_19_20_36_17_803.jpg
+2018_07_19_20_34_35_198.jpg  2018_07_19_20_36_17_819.jpg
+2018_07_19_20_34_35_216.jpg  2018_07_19_20_36_17_836.jpg
+2018_07_19_20_34_35_234.jpg  2018_07_19_20_36_17_913.jpg
+2018_07_19_20_34_35_301.jpg  2018_07_19_20_36_17_930.jpg
+2018_07_19_20_34_35_320.jpg  2018_07_19_20_36_17_948.jpg
+2018_07_19_20_34_35_338.jpg  2018_07_19_20_36_18_024.jpg
+2018_07_19_20_34_35_402.jpg  2018_07_19_20_36_18_041.jpg
+2018_07_19_20_34_35_421.jpg  2018_07_19_20_36_18_059.jpg
+2018_07_19_20_34_35_439.jpg  2018_07_19_20_36_18_136.jpg
+2018_07_19_20_34_35_500.jpg  2018_07_19_20_36_18_153.jpg
+2018_07_19_20_34_35_518.jpg  2018_07_19_20_36_18_170.jpg
 ...
 ```
 
