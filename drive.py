@@ -112,7 +112,7 @@ if __name__ == '__main__':
     )
     args = parser.parse_args()
 
-    # check that model Keras version is same as local Keras version
+    # check that model Keras version is same as local Keras version-123
     f = h5py.File(args.model, mode='r')
     model_version = f.attrs.get('keras_version')
     keras_version = str(keras_version).encode('utf8')
@@ -134,7 +134,7 @@ if __name__ == '__main__':
     else:
         print("NOT RECORDING THIS RUN ...")
 
-    # wrap Flask application with engineio's middleware
+    # wrap Flask application with engineio's middleware this is the commit
     app = socketio.Middleware(sio, app)
 
     # deploy as an eventlet WSGI server
